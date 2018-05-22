@@ -4,13 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List</title>
+  <title>book-App</title>
 
   <script type="text/x-handlebars-template" id="error-template">
       <p>{{status}}: {{statusText}}</p>
     </script>
 
   <script type="text/x-handlebars-template" id="book-template">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/icons.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
     <div>
       <div>
       <img src={{image_url}}>
@@ -39,6 +44,18 @@
     <section class="book-view container">
       <h3>My Books</h3>
       <ul id="book-list"></ul>
+    </section>
+    <section class="about-view">
+      <h5>Books app ver9000</h5>
+      <div>
+       <p>Welcome to our book app!</p>
+       <p>The app displays a list of 5 books with the Author's name and title of the book. The book list will render books from a PostgreSQL database. The client can make a request to the server for retrieval of all books, which will then be rendered as a list in the browser.</p>
+      </div>
+      <div>
+        <p>GB's stuff here</p>
+        <p>Kevin's stuff heade</p>
+      </div>
+      
     </section>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
