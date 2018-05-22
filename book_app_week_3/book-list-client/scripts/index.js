@@ -1,25 +1,23 @@
 'use strict';
 
 var app = app || {};
-(function(module){
-  function Book(rawDataObj) {
-    Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
-  }
-  Book.all = [];
-  Book.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#article-template').text());
-    return template(this);
-  };
-  
-  Book.loadAll = rows => {
-    Book.all = rows.sort((a, b) => b.title - a.title).map(Book => new Book(Book));
+
+(function(module) {
+  let productionApiUrl = '';
+  let developmentApiUrl = '';
+
+  module.isProduction = /^(?!localhost|127)/.test(window.location.hostname);
+  module.ENVIRONMENT = {
+    apiUrl: module.isProduction ? productionApiUrl : developmentApiUrl
   };
 
-  Book.fetchAll = callback => 
-  $.get(`${heroku url}/books`)
-  .then(Book.loadAll)
-  .then(callback)
-  .catch(errorCallback);
+  module.showOnly = (selector) => {
+    $('.container').hide();
+    $(selector).show();
+  };
 
-  module.Book = Book;
+  module.render = (templateId, data) => {
+    let template = Handlebars.complie($(`#${templateId}`).text());
+    return template(data);
+  };
 })(app);
