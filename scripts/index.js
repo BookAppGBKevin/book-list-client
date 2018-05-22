@@ -17,7 +17,7 @@ var app = app || {};
   };
 
   module.render = (templateId, data) => {
-    let template = Handlebars.complie($(`#${templateId}`).text());
+    let template = Handlebars.compile($(`#${templateId}`).text());
     return template(data);
   };
 })(app);

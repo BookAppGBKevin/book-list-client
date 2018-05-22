@@ -9,6 +9,7 @@ var app = app || {};
   function Book(rawDataObj) {
     Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
   }
+
   Book.all = [];
   Book.prototype.toHtml = function() {
     var template = Handlebars.compile($('#book-template').text());
@@ -16,11 +17,11 @@ var app = app || {};
   };
 
   Book.loadAll = rows => {
-    Book.all = rows.sort((a, b) => b.title - a.title).map(Book => new Book(Book));
+    Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
   };
 
   Book.fetchAll = callback =>
-    $.get(`${app.ENVIRONMENT.ApiUrl}/books`)
+    $.get(`${module.ENVIRONMENT.apiUrl}/books`)
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
