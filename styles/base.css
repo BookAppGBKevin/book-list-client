@@ -24,23 +24,6 @@ footer {
   background-color: #444;
 }
 
-input, textarea, button {
-  width: 100%;
-  margin-bottom: 5vw;
-  padding: 3vw 0;
-  border: none;
-  border-radius: 3px;
-}
-
-input, textarea {
-  width: 98%;
-  padding-left: 2%;
-}
-
-button {
-  text-transform: capitalize;
-  background-color: #444;
-  color: #ddd;
-  font-size: 4vw;
-  font-weight: bolder;
+section {
+  display: inline block
 }
