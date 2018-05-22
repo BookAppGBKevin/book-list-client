@@ -3,8 +3,8 @@
 var app = app || {};
 
 (function(module) {
-  let productionApiUrl = '';
-  let developmentApiUrl = '';
+  let productionApiUrl = 'https://gb-kh-booklist.herokuapp.com/';
+  let developmentApiUrl = 'http://localhost:3000';
 
   module.isProduction = /^(?!localhost|127)/.test(window.location.hostname);
   module.ENVIRONMENT = {
@@ -17,7 +17,7 @@ var app = app || {};
   };
 
   module.render = (templateId, data) => {
-    let template = Handlebars.complie($(`#${templateId}`).text());
+    let template = Handlebars.compile($(`#${templateId}`).text());
     return template(data);
   };
 })(app);
