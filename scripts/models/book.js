@@ -10,7 +10,7 @@ var app = app || {};
   }
   Book.all = [];
   Book.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#article-template').text());
+    var template = Handlebars.compile($('#book-template').text());
     return template(this);
   };
 
