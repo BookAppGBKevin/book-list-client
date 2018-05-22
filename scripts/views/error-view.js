@@ -6,6 +6,7 @@ var app = app || {};
   const errorView = {};
 
   errorView.initErrorPage = function (err) {
+    $('.container').hide();
     app.showOnly('.error-view');
     $('#error-message').empty();
     $('#error-message').append(app.render('error-template', err));
