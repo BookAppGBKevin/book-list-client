@@ -32,5 +32,11 @@ var app = app || {};
       .then(app.bookView.initIndexPage)
       .catch(errorCallback);
   };
+
+  Book.createBook = book =>
+    $.post(`${app.ENVIRONMENT.apiUrl}/api/v1/books/add`, book)
+      .then(() => page('/'))
+      .catch(errorCallback);
+
   module.Book = Book;
 })(app);
