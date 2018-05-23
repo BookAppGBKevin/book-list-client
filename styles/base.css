@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: #999;
   font-family: 'helvetica';
   color: #ddd;
@@ -26,4 +26,101 @@ footer {
 
 section {
   display: inline block
+} */
+
+body{
+  margin: 0;
+  background-color: #e4e4e4;
+}
+
+header{
+  height: 100px;
+  background-color: #656565;
+  color: #d4d4d4;
+}
+
+img.img-logo-responsive{
+  width: 50px;
+  height: 50px;
+  /* display: inline-block;  */
+  float: left;
+  margin-top: 15px;
+  padding-right: 20px;
+}
+
+.header-wrapper{
+  padding-top: 5px;
+  padding-left: 20px;
+}
+
+.header-wrapper p {
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+.headline a{
+  padding-left: 10px; 
+  color: #6f6f6f;
+  font-size: 20px;
+}
+  
+
+section.item{
+  height: 420px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+img.img-responsive{
+  width: 300px;
+  height: 200px;
+}
+
+
+.caption{
+  /* height: 100px; */
+  background-color: #656565;
+  padding: 3px 3px;
+}
+
+.caption > h3, .caption > p{
+  color: #d4d4d4;
+  padding-left: 20px;
+}
+
+.caption > p{
+  margin-top: -15px;
+}
+
+
+section::after{
+  display: block;
+  clear: both;
+}
+
+footer{
+  position: relative;
+  height: 80px;
+  background-color: #656565;
+  padding: 5px;
+}
+
+div.socials img{
+  width: 30px;
+  height: 30px; 
+}
+
+div.socials {
+  position: absolute;
+  right: 20px;
+}
+
+@media only screen and (max-width: 480px){
+  img.img-responsive{
+    width: 250px;
+    height: 200px;
+  }
+  
 }
