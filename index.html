@@ -5,11 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>book-App</title>
-  <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/icons.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/modules.css">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/icons.css">
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/layout.css">
+  <link rel="stylesheet" href="./styles/modules.css">
   <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 
   <script type="text/x-handlebars-template" id="error-template">
@@ -45,8 +45,8 @@
     <section class="add-view container">
       <h3>Add a New Book</h3>
       <form id="add-form">
-        <input type="text" name= "title" placeholder="Task Name">
-        <textarea name="description" placeholder="Description of the Task" cols="30" rows="10"></textarea>
+        <input type="text" name= "title" placeholder="Book Name">
+        <textarea name="description" placeholder="Description of the Book" cols="30" rows="10"></textarea>
         <input type="text" name= "category" placeholder="category">
         <input type="text" name= "contact" placeholder="Contact Person">
         <input type="text" name= "status" placeholder="Completeion Status">
@@ -58,6 +58,10 @@
       <h3>My Books</h3>
       <ul id="book-list"></ul>
     </section>
+    <section class="detail-view container">
+      <section class="book-detail"></section>
+    </section>
+
     <section class="about-view">
       <h5>Books app ver9000</h5>
       <div>
