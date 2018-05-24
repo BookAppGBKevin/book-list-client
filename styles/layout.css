@@ -1,18 +1,22 @@
-/* .container {
-  margin-top: 20%;
-} */
-
-/* header img {
-  max-width: 10%;
-  display: inline-block;
-  padding-left: 5%;
+.caption{
+  /* height: 100px; */
+  background-color: #656565;
+  padding: 3px 3px;
 }
 
-header h1 {
-  display: inline-block;
-  font-size: 5em;
-  position: absolute;
-  width: 50%;
-  height: 30%;
-  margin: auto;
-} */
+.caption > h3, .caption > p{
+  color: #d4d4d4;
+  padding-left: 20px;
+}
+
+.caption > p{
+  margin-top: -15px;
+}
+
+@media only screen and (max-width: 480px){
+  img.img-responsive{
+    width: 250px;
+    height: 200px;
+  }
+  
+}
