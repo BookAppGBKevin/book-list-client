@@ -6,7 +6,7 @@ var app = app || {};
   const bookView = {};
 
   $('.icon-menu').on('click', function(event) {
-    $('.nav-menu').slideToggle(350);
+    $('.nav-menu').slideToggle(400);
   });
 
   bookView.initIndexPage = function(ctx) {
@@ -22,7 +22,6 @@ var app = app || {};
   };
 
   bookView.initAddForm = function() {
-    reset();
     $('.add-view').show();
     $('.add-link').show();
     $('#add-form').on('submit', function(event) {
