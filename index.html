@@ -22,13 +22,28 @@
       <div>
         <li class="book-item">
           <h4>Book: {{title}}</h4>
-          <!-- <p>Desciption: {{description}}</p> -->
-          <!-- <p>ISBN: {{isbn}}</p> -->
           <p>Author: {{author}}</p>
+          <a href="/book/{{book_id}}"> View Details</a>
         </li>
       </div>
     </div>
     </script>
+
+    <script type="text/x-handlebars-template" id="book-template-detail">
+      <div>
+        <div>
+        <img src={{image_url}}>
+        <div>
+          <li class="book-item">
+            <h4>Book: {{title}}</h4>
+            <p>Desciption: {{description}}</p>
+            <p>ISBN: {{isbn}}</p>
+            <p>Author: {{author}}</p>
+            <a> </a>
+          </li>
+        </div>
+      </div>
+      </script>
 
 </head>
 
