@@ -16,12 +16,14 @@ var app = app || {};
   };
 
   bookView.initDetailPage = function(ctx) {
-    $('#book-detail').empty();
-    app.showOnly('detail-view');
-    $('.book-detail.append').append(app.render('book-detail-template', ctx));
+    console.log(ctx);
+    $('#book-template').empty();
+    app.showOnly('.detail-view');
+    $('.book-detail').append(app.render('book-template-detail', ctx[0]));
   };
 
   bookView.initAddForm = function() {
+    $('.container').hide();
     $('.add-view').show();
     $('.add-link').show();
     $('#add-form').on('submit', function(event) {
