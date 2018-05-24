@@ -9,6 +9,7 @@ var app = app || {};
     $('.nav-menu').slideToggle(400);
   });
 
+
   bookView.initIndexPage = function(ctx) {
     $('#book-list').empty();
     app.showOnly('.book-view');
@@ -17,7 +18,8 @@ var app = app || {};
 
   bookView.initDetailPage = function(ctx) {
     console.log(ctx);
-    $('#book-template').empty();
+    $('.book-detail').empty();
+
     app.showOnly('.detail-view');
     $('.book-detail').append(app.render('book-template-detail', ctx[0]));
   };
