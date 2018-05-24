@@ -21,14 +21,14 @@ var app = app || {};
   };
 
   Book.fetchAll = callback =>
-    $.get(`${module.ENVIRONMENT.apiUrl}/books`)
+    $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books`)
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
 
-  Book.fetchOne = (id, callback) => {
-    $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books/${id}`)
-      .then(Book.loadAll)
+  Book.fetchOne = (ctx, callback) => {
+    $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books/${ctx.params.book_id}`)
+      .then('#book-items') //fix this to hide
       .then(app.bookView.initIndexPage)
       .catch(errorCallback);
   };
