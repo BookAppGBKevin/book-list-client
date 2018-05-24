@@ -37,5 +37,13 @@ var app = app || {};
       .then(() => page('/'))
       .catch(errorCallback);
 
+  Book.destroyBook = (ctx) =>
+    $.ajax({
+      url: `${app.ENVIRONMENT.apiUrl}/api/v1/books/${ctx.params.book_id}`,
+      method: 'DELETE'
+    })
+      .then(console.log)
+      .then(ctx);
+
   module.Book = Book;
 })(app);
