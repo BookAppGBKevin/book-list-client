@@ -20,6 +20,10 @@ var app = app || {};
     console.log(ctx);
     $('.book-detail').empty();
 
+    $('#update-btn').on('click', function() {
+      page(`/books/${$(this).data('id')}/update`);
+    });
+
     app.showOnly('.detail-view');
     $('.book-detail').append(app.render('book-template-detail', ctx[0]));
   };
