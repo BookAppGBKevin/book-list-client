@@ -26,6 +26,10 @@ var app = app || {};
     $('#delete-book').on('click', function() {
       module.Book.destroyBook($(this).data('id'));
     });
+
+    $('#update-book').on('click', function() {
+      page(`/books/${$(this).data('id')}/update`);
+    });
   };
 
   bookView.initAddForm = function() {
