@@ -33,8 +33,26 @@ var app = app || {};
   };
 
   Book.createBook = book =>
-    $.post(`${app.ENVIRONMENT.apiUrl}/api/v1/books/add`, book)
+    $.post(`${app.ENVIRONMENT.apiUrl}/api/v1/books`, book)
       .then(() => page('/'))
+      .catch(errorCallback);
+
+  Book.destroyBook = id =>
+    $.ajax({
+      url: `${app.ENVIRONMENT.apiUrl}/api/v1/books/${id}`,
+      method: 'DELETE'
+    })
+      .then(console.log)
+      .then(() => page('/'))
+      .catch(errorCallback);
+
+  Book.updateBook = (book, id) =>
+    $.ajax({
+      url: `${app.ENVIRONMENT.apiUrl}/api/v1/books/${id}`,
+      method: 'PUT',
+      data: book,
+    })
+      .then(() => page(`/books/${id}`))
       .catch(errorCallback);
 
   module.Book = Book;
