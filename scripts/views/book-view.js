@@ -22,6 +22,10 @@ var app = app || {};
 
     app.showOnly('.detail-view');
     $('.book-detail').append(app.render('book-template-detail', ctx[0]));
+
+    $('#delete-book').on('click', function() {
+      module.Book.destroyBook($(this).data('id'));
+    });
   };
 
   bookView.initAddForm = function() {

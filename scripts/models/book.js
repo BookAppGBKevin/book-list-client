@@ -37,13 +37,14 @@ var app = app || {};
       .then(() => page('/'))
       .catch(errorCallback);
 
-  Book.destroyBook = (ctx) =>
+  Book.destroyBook = id =>
     $.ajax({
-      url: `${app.ENVIRONMENT.apiUrl}/api/v1/books/${ctx.params.book_id}`,
+      url: `${app.ENVIRONMENT.apiUrl}/api/v1/books/${id}`,
       method: 'DELETE'
     })
       .then(console.log)
-      .then(ctx);
+      .then(() => page('/'))
+      .catch(errorCallback);
 
   module.Book = Book;
 })(app);
