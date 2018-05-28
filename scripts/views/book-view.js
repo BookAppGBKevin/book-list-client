@@ -19,16 +19,16 @@ var app = app || {};
   bookView.initDetailPage = function(ctx) {
     console.log(ctx);
     $('.book-detail').empty();
+
+    $('#update-book').on('click', function() {
+      page(`/books/${$(this).data('id')}/update`);
+    });
+
     app.showOnly('.detail-view');
     $('.book-detail').append(app.render('book-template-detail', ctx[0]));
 
     $('#delete-book').on('click', function() {
       module.Book.destroyBook($(this).data('id'));
-    });
-
-    $('#update-book').on('click', function() {
-      $('.update-view').show();
-      page(`/books/${$(this).data('id')}/update`);
     });
   };
 

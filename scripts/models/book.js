@@ -1,6 +1,6 @@
 'use strict';
 var app = app || {};
-(function(module){
+(function (module) {
   function errorCallback(err) {
     console.error(err);
     module.errorView.initErrorPage(err);
@@ -11,7 +11,7 @@ var app = app || {};
   }
 
   Book.all = [];
-  Book.prototype.toHtml = function() {
+  Book.prototype.toHtml = function () {
     var template = Handlebars.compile($('#book-template').text());
     return template(this);
   };
@@ -37,22 +37,21 @@ var app = app || {};
       .then(() => page('/'))
       .catch(errorCallback);
 
+  Book.updateBook = book_id =>
+    $.ajax(`${app.ENVIRONMENT.apiUrl}/api/v1/books/`, book_id)
+      .then(() => page(`/books/${book_id}`))
+      .catch(errorCallback);
+
+  Book.destroyBook = (ctx) =>
+
   Book.destroyBook = id =>
+
     $.ajax({
       url: `${app.ENVIRONMENT.apiUrl}/api/v1/books/${id}`,
       method: 'DELETE'
     })
       .then(console.log)
       .then(() => page('/'))
-      .catch(errorCallback);
-
-  Book.updateBook = (book, id) =>
-    $.ajax({
-      url: `${app.ENVIRONMENT.apiUrl}/api/v1/books/${id}`,
-      method: 'PUT',
-      data: book,
-    })
-      .then(() => page(`/books/${id}`))
       .catch(errorCallback);
 
   module.Book = Book;
