@@ -71,16 +71,27 @@
       <section id="error-message"></section>
     </section>
 
+    <section class="update-view container">
+      <h3 class="view-title">Update a Book</h3>
+      <form id="update-form">
+        <input type="text" name="author" placeholder="author">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="isbn" placeholder="isbn">
+        <input type="text" name="image_url" placeholder="image_url">
+        <textarea name="description" placeholder="description" cols="30" rows="10"></textarea>
+        <button type="submit">update</button>
+      </form>
+    </section>
+
     <section class="add-view container">
       <h3>Add a New Book</h3>
-      <form id="add-form">
-        <input type="text" name="author" placeholder="Book Name">
+      <form id="create-form">
+        <input type="text" name="author" placeholder="author">
         <input type="text" name="title" placeholder="title">
         <input type="text" name="isbn" placeholder="isbn">
         <input type="url" name="image_url" placeholder="image_url">
         <textarea name="description" placeholder="Description of the Book" cols="30" rows="10"></textarea>
         <button type="submit">Add this Book</button>
-
       </form>
     </section>
 
