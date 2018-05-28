@@ -19,7 +19,6 @@ var app = app || {};
   bookView.initDetailPage = function(ctx) {
     console.log(ctx);
     $('.book-detail').empty();
-
     app.showOnly('.detail-view');
     $('.book-detail').append(app.render('book-template-detail', ctx[0]));
 
@@ -28,7 +27,32 @@ var app = app || {};
     });
 
     $('#update-book').on('click', function() {
+      $('.update-view').show();
       page(`/books/${$(this).data('id')}/update`);
+    });
+  };
+
+  bookView.initUpdateForm = function(ctx) {
+    app.showOnly('.update-view');
+
+    $('#update-form input[name="author"]').val(ctx.book.author);
+    $('#update-form input[name="title"]').val(ctx.book.title);
+    $('#update-form input[name="isbn"]').val(ctx.book.isbn);
+    $('#update-form input[name="image_url"]').val(ctx.book.image_url);
+    $('#update-form textarea[name="description"]').val(ctx.book.description);
+
+    $('#update-form').on('submit', function(event) {
+      event.preventDefault();
+
+      let book = {
+        book_id: ctx.book.book_id,
+        author: event.target.author.value,
+        title: event.target.title.value,
+        isbn: event.target.isbn.value,
+        image_url: event.target.image_url.value,
+        description: event.target.description.value,
+      };
+      module.Book.update(book, book.book_id);
     });
   };
 
